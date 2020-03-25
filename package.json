@@ -1,0 +1,48 @@
+{
+    "name": "portfolio-v2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon ./index.js",
+        "watch": "nodemon ./index.js --ignore public/",
+        "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \" WATCH, ASSETS \" --prefix name",
+        "assets": "webpack -w --mode=development",
+        "scss": "node-sass --watch scss -o css",
+        "build": "webpack --mode=production --config webpack.config.js"
+    },
+    "keywords": [],
+    "author": "daisho",
+    "license": "MIT",
+    "browserslist": [
+        "last 2 version",
+        "not dead"
+    ],
+    "dependencies": {
+        "canvas-sketch-util": "^1.10.0",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.4",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
+        "express-session": "^1.17.0",
+        "nice-color-palettes": "^3.0.0",
+        "nodemailer": "^6.4.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "autoprefixer": "^9.7.3",
+        "babel-loader": "^8.0.6",
+        "concurrently": "^5.0.0",
+        "css-loader": "^3.2.1",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "mini-css-extract-plugin": "^0.8.0",
+        "node-sass": "^4.13.1",
+        "nodemon": "^2.0.1",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^8.0.0",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    }
+}
