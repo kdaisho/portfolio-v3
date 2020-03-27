@@ -1,8 +1,25 @@
 <header class="nav">
-    {{#each data.menuItems}}
-    <button class="button">
-        {{!-- <img class="icon" src="images/nav/{{this.icon}}.svg" alt="{{this.name}}"> --}}
-        {{this.name}}
-    </button>
-    {{/each}}
+    <div class="nav-left">
+        <div class="logo">
+            {{{ getIcon "nav" "logo" }}}
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <ul class="social-links">
+            {{#each data.socialLinks}}
+            <li>
+                <a href="{{this.url}}" target="_black">
+                    <img src="images/nav/{{this.name}}.svg" alt="{{this.name}}">
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="menu-items">
+            {{#each data.menuItems}}
+            <button class="button">
+                {{this.name}}
+            </button>
+            {{/each}}
+        </div>
 </header>

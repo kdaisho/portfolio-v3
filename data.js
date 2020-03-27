@@ -101,6 +101,17 @@ exports.skills = [
     { url: "nginx", alt: "Nginx", skill: "nginx" }
 ];
 
+exports.socialLinks = [
+    {
+        url:
+            "//www.linkedin.com/in/daisho-komiyama-6766657a?trk=nav_responsive_tab_profile_pic",
+        name: "linkedin"
+    },
+    {
+        url: "//github.com/kdaisho",
+        name: "github"
+    }
+];
 exports.menuItems = [
     {
         icon: "book",

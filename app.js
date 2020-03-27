@@ -14,7 +14,7 @@ const ehbs = expressHandlebars.create({
     extname: ".hbs",
     defaultLayout: "main",
     helpers: {
-        getIcon: name => helpers.icon(name),
+        getIcon: (category, name) => helpers.icon(category, name),
         getYear: () => helpers.getYear()
     }
 });
