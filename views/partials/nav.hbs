@@ -1,25 +1,31 @@
-<header class="nav">
-    <div class="nav-left">
-        <div class="logo">
-            {{{ getIcon "nav" "logo" }}}
+<header class="nav_">
+    <div class="app-wrapper nav">
+        <div class="nav-left">
+            <div class="logo">
+                {{{ getIcon "nav" "logo" }}}
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <ul class="social-links">
+                {{#each data.socialLinks}}
+                <li>
+                    <a href="{{this.url}}" target="_black">
+                        <img src="images/nav/{{this.name}}.svg" alt="{{this.name}}">
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+            <div class="menu-items">
+                {{#each data.menuItems}}
+                <label>
+                    <input type="radio" name="nav-button" />
+                    <button class="button" style="pointer-events: none">
+                        {{this.name}}
+                    </button>
+                </label>
+                {{/each}}
+            </div>
         </div>
     </div>
-
-    <div class="nav-right">
-        <ul class="social-links">
-            {{#each data.socialLinks}}
-            <li>
-                <a href="{{this.url}}" target="_black">
-                    <img src="images/nav/{{this.name}}.svg" alt="{{this.name}}">
-                </a>
-            </li>
-            {{/each}}
-        </ul>
-        <div class="menu-items">
-            {{#each data.menuItems}}
-            <button class="button">
-                {{this.name}}
-            </button>
-            {{/each}}
-        </div>
 </header>
