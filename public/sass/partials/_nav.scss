@@ -1,5 +1,6 @@
 header {
-    border-bottom: 2px solid $themeColor;
+    background: #fff;
+    border-bottom: 5px solid #000;
     width: 100%;
     .nav {
         align-items: center;
@@ -20,7 +21,7 @@ header {
         }
 
         .nav-left {
-            flex: 0 0 150px;
+            flex: 0 0 80px;
             height: 45px;
             .logo {
                 transform: scale(0.5);
@@ -29,6 +30,7 @@ header {
         }
 
         .nav-right {
+            align-items: center;
             display: flex;
             flex-flow: row nowrap;
             flex: 0 0 calc(100% - 150px);
@@ -37,6 +39,8 @@ header {
                 display: flex;
                 flex-flow: row nowrap;
                 flex: 0 0 100px;
+                justify-content: space-around;
+                margin: 0 10px -5px;
                 img {
                     width: 30px;
                 }
@@ -46,6 +50,7 @@ header {
                 flex-flow: row nowrap;
                 flex: 0 0 50%;
                 justify-content: flex-end;
+                margin-top: -5px;
 
                 label {
                     &:hover {
