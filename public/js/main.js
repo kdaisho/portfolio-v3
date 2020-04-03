@@ -7,10 +7,12 @@ import "../sass/style.scss";
 // import toggleModal from "./modules/toggleModal";
 // import destroyFlash from "./modules/flash";
 // import data from "../../data";
+import toggleMenu from "./modules/toggleMenu";
 
 // import buttonClick from "./modules/buttonClick";
 
 document.addEventListener("DOMContentLoaded", () => {
+    toggleMenu();
     // init();
     // resizeLogo();
     // navigation();

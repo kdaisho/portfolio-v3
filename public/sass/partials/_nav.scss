@@ -1,23 +1,33 @@
 header {
     background: #fff;
     border-bottom: 5px solid #000;
+    left: 0;
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 100;
+
     .nav {
         align-items: center;
         display: flex;
         flex-flow: row nowrap;
-        height: 60px;
+        height: 50px;
+        position: relative;
         justify-content: space-between;
+
+        @media (min-width: $tablet) {
+            height: 58px;
+        }
 
         path {
             stroke: $themeColor;
             stroke-width: 1;
             stroke-dasharray: 816;
             stroke-dashoffset: 816;
-            animation: offset 2s linear forwards, fill-it 1s 2s forwards;
+            animation: offset 2s linear forwards, paintLogo 1s 2s forwards;
         }
         .logo-text {
-            animation: fill-it 2s 2s forwards;
+            animation: paintLogo 2s 2s forwards;
         }
 
         .nav-left {
@@ -45,18 +55,37 @@ header {
                     width: 30px;
                 }
             }
-            .menu-items {
-                display: flex;
-                flex-flow: row nowrap;
-                flex: 0 0 50%;
-                justify-content: flex-end;
-                margin-top: -5px;
+            .menu-button {
+                @media (min-width: $tablet) {
+                    display: none;
+                }
+            }
+            .menu-pane {
+                display: none;
 
-                label {
-                    &:hover {
-                        cursor: pointer;
+                &.active {
+                    background: rgba(0, 0, 0, 0.85);
+                    display: block;
+                    height: 100vh;
+                    left: 0;
+                    position: absolute;
+                    top: 55px;
+                    width: 100%;
+                }
+                @media (min-width: $tablet) {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    flex: 0 0 50%;
+                    justify-content: flex-end;
+                    margin-top: -5px;
+
+                    label {
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
+
                 input[type="radio"] {
                     display: none;
                 }
@@ -99,23 +128,6 @@ header {
                 right: -4px;
                 box-shadow: 1px 1px 0 #000;
             }
-        }
-    }
-
-    @keyframes offset {
-        0% {
-            stroke-dashoffset: 816;
-        }
-        100% {
-            stroke-dashoffset: 0;
-        }
-    }
-    @keyframes fill-it {
-        0% {
-            fill: transparent;
-        }
-        100% {
-            fill: $themeColor;
         }
     }
 }

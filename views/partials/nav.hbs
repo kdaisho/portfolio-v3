@@ -1,4 +1,4 @@
-<header class="nav_">
+<header>
     <div class="app-wrapper nav">
         <div class="nav-left">
             <div class="logo">
@@ -6,7 +6,7 @@
             </div>
         </div>
 
-        <div class="nav-right">
+        <div id="navRight" class="nav-right">
             <ul class="social-links">
                 {{#each data.socialLinks}}
                 <li>
@@ -16,7 +16,8 @@
                 </li>
                 {{/each}}
             </ul>
-            <div class="menu-items">
+            <button id="menuButton" class="menu-button">=</button>
+            <div id="menuPane" class="menu-pane">
                 {{#each data.menuItems}}
                 <label>
                     <input type="radio" name="nav-button" />
