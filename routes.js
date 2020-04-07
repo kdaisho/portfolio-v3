@@ -8,7 +8,11 @@ console.log("P::", palettes);
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("home", { title: "Daisho Front-end Developer", palettes });
+    res.render("home", { title: "Daisho Front-end Developer" });
+});
+
+router.get("/match", (req, res) => {
+    res.render("dragDropMatch", { title: "Match" });
 });
 
 router.post("/send", mail.sendMessage);
